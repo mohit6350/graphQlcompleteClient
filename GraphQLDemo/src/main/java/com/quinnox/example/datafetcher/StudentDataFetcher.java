@@ -5,6 +5,8 @@ import com.quinnox.example.repository.StudentRepository;
 
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;
+
+import org.hibernate.criterion.Example;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,7 +20,6 @@ public class StudentDataFetcher implements DataFetcher<Student> {
 	public Student get(DataFetchingEnvironment dataFetchingEnvironment) {
 
 		String roll = dataFetchingEnvironment.getArgument("rollNumber");
-
-		return studentRepository.findOne(roll);
+		return studentRepository.findById(roll).get();
 	}
 }

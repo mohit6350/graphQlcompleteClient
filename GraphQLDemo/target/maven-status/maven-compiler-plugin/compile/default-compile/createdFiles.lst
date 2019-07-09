@@ -2,4 +2,5 @@ com\quinnox\example\datafetcher\AllStudentDataFetcher.class
 com\quinnox\example\service\GraphQLService.class
 com\quinnox\example\controller\ManagedStudentController.class
 com\quinnox\example\model\Student.class
+com\quinnox\example\model\Product.class
 com\quinnox\example\repository\StudentRepository.class

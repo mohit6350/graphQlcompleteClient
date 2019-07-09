@@ -9,6 +9,7 @@ import graphql.schema.DataFetchingEnvironment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -19,6 +20,10 @@ public class AllStudentDataFetcher implements DataFetcher<List<Student>>{
 
     @Override
     public List<Student> get(DataFetchingEnvironment dataFetchingEnvironment) {
-        return studentRepository.findAll();
+        List<Student> list = new ArrayList<>();
+        studentRepository.findAll().forEach(student ->{
+        	list.add(student);
+        });
+        return list;
     }
 }

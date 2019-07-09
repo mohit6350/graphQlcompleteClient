@@ -67,23 +67,25 @@ public class GraphQLService {
 				});
 	}*/
 	
-	/*private void loadDataIntoHSQL() throws Exception{
+	private void loadDataIntoHSQL() throws Exception{
 		CSVParser parser = new CSVParser();
-		List<Student> list = parser.parseCSV(new File("D:\\quinnox projects\\cyc\\git\\GraphQL\\GraphQLDemo\\src\\main\\resources\\student.csv2"));
+		String path = "C:\\Users\\Mohitk\\Desktop\\student.csv2.txt";
+		List<Student> list = parser.parseCSV(new File(path));
 		list.stream().forEach(student ->{
 			studentRepository.save(student);
 		});
 		
-	}*/
+	}
 	
-	private void loadDataIntoHSQL() throws Exception{
+	/*private void loadDataIntoHSQL() throws Exception{
 		ExcelReader reader = new ExcelReader();
-		File f = new File("D:\\quinnox projects\\cyc\\git\\GraphQLDemo\\src\\main\\resources\\student.xlsx");
+		String  path = "C:\\Users\\Mohitk\\Desktop\\student..xlsx";
+		File f = new File(path);
 		List<Student> list = reader.readExcelUsingXSSF(f);
 		list.stream().forEach(student ->{
 			studentRepository.save(student);
 		});
-	}
+	}*/
 
 	private RuntimeWiring buildRuntimeWiring() {
 		return RuntimeWiring
